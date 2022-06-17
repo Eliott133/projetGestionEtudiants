@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="p" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="564.0" prefWidth="872.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ControllerRechercheTrombinoscope">
+   <children>
+      <Pane prefHeight="564.0" prefWidth="200.0" style="-fx-background-color: e6007e;">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="-1.0" layoutY="-1.0">
+               <image>
+                  <Image url="@../images/lettreDetoure.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="28.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Emploi du temps" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="28.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Messagerie" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="31.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notes" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="820.0" layoutY="19.0">
+         <image>
+            <Image url="@../images/power-off.png" />
+         </image>
+      </ImageView>
+      <Line endX="214.0" endY="-65.0" layoutX="615.0" layoutY="193.0" startX="-387.0" startY="-65.0" />
+      <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="227.0" layoutY="19.0">
+         <image>
+            <Image url="@../images/arrow.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="244.0" layoutY="84.0" prefHeight="33.0" prefWidth="266.0" style="-fx-background-color: white; -fx-border-color: e69191; -fx-background-radius: 15px; -fx-border-radius: 50px;">
+         <children>
+            <ComboBox fx:id="nomGroupe" layoutX="16.0" layoutY="4.0" onAction="#changeTrombinoscope" opacity="0.5" prefHeight="25.0" prefWidth="234.0" promptText="Groupe" style="-fx-background-color: white;" />
+         </children>
+      </Pane>
+      <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="nombrePage" layoutX="515.0" layoutY="540.0" text="1 / 1">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button layoutX="820.0" layoutY="19.0" mnemonicParsing="false" onAction="#shutdown" opacity="0.0" prefHeight="33.0" prefWidth="33.0" text="Button" />
+      <Button layoutX="227.0" layoutY="19.0" mnemonicParsing="false" onAction="#goback" opacity="0.0" prefHeight="33.0" prefWidth="33.0" text="Button" />
+      <Button fx:id="pageMoins" layoutX="484.0" layoutY="536.0" mnemonicParsing="false" onAction="#pageMoins" text="&lt;" />
+      <Button fx:id="pagePlus" layoutX="547.0" layoutY="536.0" mnemonicParsing="false" onAction="#pagePlus" text="&gt;" />
+   </children>
+</Pane>

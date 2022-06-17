@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="391.0" prefWidth="716.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ControllerHomePage">
+   <children>
+      <ImageView fitHeight="425.0" fitWidth="759.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/IutPagePresentation.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="258.0" layoutY="52.0" prefHeight="287.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 30px; -fx-border-radius: 15px;">
+         <children>
+            <Button fx:id="connexion" layoutX="56.0" layoutY="222.0" mnemonicParsing="false" onAction="#connexion" style="-fx-border-radius: 15px; -fx-background-radius: 50px; -fx-background-color: e6007e;" text="Connexion" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="86.0" fitWidth="81.0" layoutX="60.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/LogoIut.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="id" layoutX="26.0" layoutY="144.0" promptText="Identifiant" style="-fx-background-radius: 50;" />
+            <Label fx:id="erreur" layoutX="27.0" layoutY="188.0" text="L'identifiant n'est pas valide" textFill="#f71616" visible="false" />
+         </children>
+      </Pane>
+   </children>
+</Pane>
