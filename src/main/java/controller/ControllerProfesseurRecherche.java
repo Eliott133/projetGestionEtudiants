@@ -1,4 +1,4 @@
-package application;
+package controller;
 
 import dao.EtudiantDAO;
 import javafx.collections.FXCollections;

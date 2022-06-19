@@ -4,8 +4,8 @@ module com.example.saegestionetudianttheoeliottlouison {
     requires java.sql;
 
 
-    opens application to javafx.fxml;
-    exports application;
+    opens controller to javafx.fxml;
+    exports controller;
     exports modele;
     opens modele to javafx.fxml;
 }

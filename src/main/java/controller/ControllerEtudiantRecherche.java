@@ -1,4 +1,4 @@
-package application;
+package controller;
 
 import dao.EtudiantDAO;
 import javafx.collections.FXCollections;
@@ -20,34 +20,31 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ControllerSecretaireRecherche implements Initializable {
+public class ControllerEtudiantRecherche implements Initializable {
+
 
     @FXML
-    private TableColumn<Etudiant, String> numCol, nomCol, prenomCol, dateCol, descCol, groupeCol, groupeTDCol;
-
+    private TableColumn<Etudiant, String> nomCol, prenomCol, dateCol, descCol, groupeCol, groupeTDCol;
     @FXML
     private TableColumn<Etudiant, Integer> ageCol;
-
     @FXML
     private TableColumn<Etudiant, Boolean> redCol, demCol;
-
     @FXML
     private TableView<Etudiant> tableViewSecretaire;
-
     @FXML
     private TextField searchEtu;
-
     @FXML
     private ComboBox comboBoxGroupeTP;
+
 
     private ObservableList<Groupe> listChoixGroupeTP = FXCollections.observableArrayList();
     private ObservableList<Etudiant> obListEtudiant = FXCollections.observableArrayList(EtudiantDAO.getListeEtudiant());
     private ObservableList<Etudiant> ObListEtudiantRecherche;
 
+
     private final String VALEUR_DEFAUT_PROMPT_COMBO_BOX = "Choisir un groupe";
     private final String VALEUR_DEFAUT_PROMPT_TEXT_FIELD = "Nom d'un étudiant";
 
-    /* <> LINK ENTRE LES PAGES */
     @FXML
     void shutdown(ActionEvent event) throws IOException {
         FXMLLoader fxmlCalcLoader = new FXMLLoader(Main.class.getResource("connexion.fxml"));
@@ -57,7 +54,7 @@ public class ControllerSecretaireRecherche implements Initializable {
 
     @FXML
     void goback(ActionEvent event) throws IOException {
-        FXMLLoader fxmlCalcLoader = new FXMLLoader(Main.class.getResource("SecretaireHome.fxml"));
+        FXMLLoader fxmlCalcLoader = new FXMLLoader(Main.class.getResource("EtudiantHome.fxml"));
         Scene sceneCalc = new Scene(fxmlCalcLoader.load());
         Main.stage.setScene(sceneCalc);
     }
@@ -69,18 +66,24 @@ public class ControllerSecretaireRecherche implements Initializable {
         Main.stage.setScene(sceneCalc);
     }
 
-
-
     @Override /* Initialisation de la page */
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadComboBoxGroupeTP();
         comboBoxGroupeTP.setPromptText(VALEUR_DEFAUT_PROMPT_COMBO_BOX); //init prompt-text
         searchEtu.setPromptText(VALEUR_DEFAUT_PROMPT_TEXT_FIELD); //init prompt-text
         displayTableView(obListEtudiant); //affiche la liste des étudiant d'un tableView
+
+        if (ControllerHomePage.getPersonnel() != null) {
+            // --------------
+        }
+        else {
+            comboBoxGroupeTP.getSelectionModel().select(ControllerHomePage.getEtudiant().getIdGroupeTP());
+            onSearch(new ActionEvent());
+        }
+
     }
 
     public void displayTableView(ObservableList<Etudiant> list){ // Méthode permettant d'afficher le tableau
-        numCol.setCellValueFactory(new PropertyValueFactory<>("num"));
         nomCol.setCellValueFactory(new PropertyValueFactory<>("nom"));
         prenomCol.setCellValueFactory(new PropertyValueFactory<>("prenom"));
         ageCol.setCellValueFactory(new PropertyValueFactory<>("age"));
@@ -132,9 +135,10 @@ public class ControllerSecretaireRecherche implements Initializable {
         comboBoxGroupeTP.getItems().addAll(listChoixGroupeTP);
     }
 
-    public void onReset(ActionEvent actionEvent) { //Permet de supprimer tout les critères et affiche tout les étudiant (sans critères)
+    public void onReset(ActionEvent actionEvent) { //Permet de supprimer tout les critère et affiche tout les étudiant (sans critères)
         displayTableView(obListEtudiant);
     }
+
 
 
 }

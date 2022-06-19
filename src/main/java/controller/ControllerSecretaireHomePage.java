@@ -1,4 +1,4 @@
-package application;
+package controller;
 
 import dao.PersonnelDAO;
 import javafx.event.ActionEvent;

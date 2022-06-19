@@ -1,4 +1,4 @@
-package application;
+package controller;
 
 import dao.EtudiantDAO;
 import javafx.collections.FXCollections;
@@ -20,34 +20,29 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ControllerEnseignantRecherche implements Initializable {
+public class ControllerSecretaireRecherche implements Initializable {
 
     @FXML
     private TableColumn<Etudiant, String> numCol, nomCol, prenomCol, dateCol, descCol, groupeCol, groupeTDCol;
+
     @FXML
     private TableColumn<Etudiant, Integer> ageCol;
+
     @FXML
     private TableColumn<Etudiant, Boolean> redCol, demCol;
+
     @FXML
     private TableView<Etudiant> tableViewSecretaire;
 
     @FXML
-    void trombinoscope(ActionEvent event) throws IOException {
-        FXMLLoader fxmlCalcLoader = new FXMLLoader(Main.class.getResource("RechercheTrombinoscope.fxml"));
-        Scene sceneCalc = new Scene(fxmlCalcLoader.load());
-        Main.stage.setScene(sceneCalc);
-    }
-
-    @FXML
     private TextField searchEtu;
+
     @FXML
     private ComboBox comboBoxGroupeTP;
-
 
     private ObservableList<Groupe> listChoixGroupeTP = FXCollections.observableArrayList();
     private ObservableList<Etudiant> obListEtudiant = FXCollections.observableArrayList(EtudiantDAO.getListeEtudiant());
     private ObservableList<Etudiant> ObListEtudiantRecherche;
-
 
     private final String VALEUR_DEFAUT_PROMPT_COMBO_BOX = "Choisir un groupe";
     private final String VALEUR_DEFAUT_PROMPT_TEXT_FIELD = "Nom d'un étudiant";
@@ -59,6 +54,21 @@ public class ControllerEnseignantRecherche implements Initializable {
         Scene sceneCalc = new Scene(fxmlCalcLoader.load());
         Main.stage.setScene(sceneCalc);
     }
+
+    @FXML
+    void goback(ActionEvent event) throws IOException {
+        FXMLLoader fxmlCalcLoader = new FXMLLoader(Main.class.getResource("SecretaireHome.fxml"));
+        Scene sceneCalc = new Scene(fxmlCalcLoader.load());
+        Main.stage.setScene(sceneCalc);
+    }
+
+    @FXML
+    void trombinoscope(ActionEvent event) throws IOException {
+        FXMLLoader fxmlCalcLoader = new FXMLLoader(Main.class.getResource("RechercheTrombinoscope.fxml"));
+        Scene sceneCalc = new Scene(fxmlCalcLoader.load());
+        Main.stage.setScene(sceneCalc);
+    }
+
 
 
     @Override /* Initialisation de la page */
@@ -122,7 +132,7 @@ public class ControllerEnseignantRecherche implements Initializable {
         comboBoxGroupeTP.getItems().addAll(listChoixGroupeTP);
     }
 
-    public void onReset(ActionEvent actionEvent) { //Permet de supprimer tout les critère et affiche tout les étudiant (sans critères)
+    public void onReset(ActionEvent actionEvent) { //Permet de supprimer tout les critères et affiche tout les étudiant (sans critères)
         displayTableView(obListEtudiant);
     }
 
