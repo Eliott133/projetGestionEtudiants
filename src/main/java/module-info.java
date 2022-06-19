@@ -6,4 +6,6 @@ module com.example.saegestionetudianttheoeliottlouison {
 
     opens application to javafx.fxml;
     exports application;
+    exports modele;
+    opens modele to javafx.fxml;
 }

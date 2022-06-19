@@ -1,6 +1,6 @@
-package DAO;
+package dao;
 
-import application.Groupe;
+import modele.Groupe;
 import util.ConnectionBDD;
 import java.sql.*;
 import java.util.List;

@@ -1,6 +1,6 @@
 package application;
 
-import DAO.EtudiantDAO;
+import dao.EtudiantDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -10,6 +10,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import modele.Etudiant;
+import modele.Groupe;
 
 import java.io.IOException;
 import java.net.URL;

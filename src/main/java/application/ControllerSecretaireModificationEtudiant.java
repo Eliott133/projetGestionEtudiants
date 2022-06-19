@@ -1,6 +1,6 @@
 package application;
 
-import DAO.EtudiantDAO;
+import dao.EtudiantDAO;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -10,8 +10,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
+import modele.Etudiant;
+import modele.Groupe;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Iterator;

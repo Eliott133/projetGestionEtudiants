@@ -1,7 +1,7 @@
-package DAO;
+package dao;
 
-import application.Etudiant;
-import application.Groupe;
+import modele.Etudiant;
+import modele.Groupe;
 import util.ConnectionBDD;
 import java.sql.*;
 import java.util.ArrayList;

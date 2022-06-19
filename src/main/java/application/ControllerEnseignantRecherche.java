@@ -1,6 +1,6 @@
 package application;
 
-import DAO.EtudiantDAO;
+import dao.EtudiantDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -13,6 +13,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import modele.Etudiant;
+import modele.Groupe;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;

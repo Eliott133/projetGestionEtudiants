@@ -1,6 +1,6 @@
-package DAO;
+package dao;
 
-import application.Personnel;
+import modele.Personnel;
 import util.ConnectionBDD;
 import java.sql.*;
 import java.util.ArrayList;

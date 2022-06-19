@@ -1,8 +1,8 @@
 package application;
 
-import DAO.EtudiantDAO;
-import DAO.GroupeDAO;
-import DAO.PersonnelDAO;
+import dao.EtudiantDAO;
+import dao.GroupeDAO;
+import dao.PersonnelDAO;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

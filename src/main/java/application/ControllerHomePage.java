@@ -1,12 +1,15 @@
 package application;
 
-import DAO.EtudiantDAO;
-import DAO.PersonnelDAO;
+import dao.EtudiantDAO;
+import dao.PersonnelDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import modele.Etudiant;
+import modele.Personnel;
+
 import java.io.IOException;
 import java.util.List;
 

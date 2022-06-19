@@ -1,10 +1,12 @@
 package application;
 
-import DAO.EtudiantDAO;
+import dao.EtudiantDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import modele.Etudiant;
+
 import java.io.IOException;
 import java.util.List;
 
